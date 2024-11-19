@@ -26,10 +26,10 @@
 let valuesArray = document.cookie.split("; ").map(cookie => cookie.split("=")[1]);
 window.onload = () => 
     {
-        document.cookie = "cookieEnabled=False;"
         console.log(document.cookie);
 	if(valuesArray[0] == "True"){
         const form = document.querySelector('.InputForm');
+
         form.style.display = 'none';
 		if (confirm("Delete cookies ?"))
              {
@@ -55,7 +55,7 @@ window.onload = () =>
         }
         console.log(minDigit);
         document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = "cookieEnabled=True;";
+        document.cookie = "True;";
     }
 
 
