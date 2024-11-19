@@ -24,15 +24,22 @@
     }
 // завдання 3
 let cookieValue = document.cookie.toString();
+if(cookieValue == "True");
+{
+    const form = document.querySelector('.InputForm');
+    form.style.display = 'none';
+    const button = document.querySelector('.taskButton');
+    button.style.display = 'none';
+}
 window.onload = () => 
     {
-	if(cookieValue == "True"){
-        const form = document.querySelector('.InputForm');
-
-        form.style.display = 'none';
+	if(cookieValue == "True")
+        {
 		if (confirm("Delete cookies ?"))
         {
-			document.cookie = "False"
+            form.style.display = 'grid';
+            button.style.display = 'flex';
+			document.cookie = "False";
 		}
 	}
 };
