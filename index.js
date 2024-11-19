@@ -23,11 +23,11 @@
         <span class = "square">${square}</span>`;
     }
 // завдання 3
-let valuesArray = document.cookie.split("; ").map(cookie => cookie.split("=")[1]);
+let valuesArray = document.cookie;
 window.onload = () => 
     {
         console.log(document.cookie);
-	if(valuesArray[0] == "True"){
+	if(valuesArray == "True"){
         const form = document.querySelector('.InputForm');
 
         form.style.display = 'none';
