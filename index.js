@@ -22,7 +22,7 @@
         block5.innerHTML += `<br>
         <span class = "square">${square}</span>`;
     }
-// завдання 3
+// завдання 3.1
 let cookieValue = document.cookie.toString();
 if(cookieValue == "True");
 {
