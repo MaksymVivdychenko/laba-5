@@ -23,7 +23,7 @@
         <span class = "square">${square}</span>`;
     }
 // завдання 3
-let valuesArray = document.cookie;
+let valuesArray = document.cookie.toString();
 window.onload = () => 
     {
         console.log(document.cookie);
