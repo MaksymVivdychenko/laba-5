@@ -33,7 +33,7 @@ window.onload = () =>
         form.style.display = 'none';
 		if (confirm("Delete cookies ?"))
              {
-			document.cookie = "cookieEnabled=False;"
+			document.cookie = "False"
 		}else{
 			alert("COOKIES ARE HERE ! Reload page or no 1000 from Zelenskyy");
 		}
