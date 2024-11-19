@@ -29,7 +29,10 @@ window.onload = () =>
         document.cookie = "cookieEnabled=False;"
         console.log(document.cookie);
 	if(valuesArray[0] == "True"){
-		if (confirm("Delete cookies ?")) {
+        const form = document.querySelector('.InputForm');
+        form.style.display = 'none';
+		if (confirm("Delete cookies ?"))
+             {
 			document.cookie = "cookieEnabled=False;"
 		}else{
 			alert("COOKIES ARE HERE ! Reload page or no 1000 from Zelenskyy");
