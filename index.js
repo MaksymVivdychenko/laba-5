@@ -24,7 +24,7 @@
     }
 // завдання 3.1
 let cookieValue = document.cookie.toString();
-if(cookieValue == "True");
+if(cookieValue == "True")
 {
     const form = document.querySelector('.InputForm');
     form.style.display = 'none';
