@@ -23,9 +23,9 @@
         <span class = "square">${square}</span>`;
     }
 // завдання 3
+let cookieValue = document.cookie.toString();
 window.onload = () => 
     {
-    let cookieValue = document.cookie.toString();
 	if(cookieValue == "True"){
         const form = document.querySelector('.InputForm');
 
