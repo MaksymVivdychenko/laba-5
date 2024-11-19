@@ -23,19 +23,16 @@
         <span class = "square">${square}</span>`;
     }
 // завдання 3
-let valuesArray = document.cookie.toString();
 window.onload = () => 
     {
-        console.log(document.cookie);
-	if(valuesArray == "True"){
+    let cookieValue = document.cookie.toString();
+	if(cookieValue == "True"){
         const form = document.querySelector('.InputForm');
 
         form.style.display = 'none';
 		if (confirm("Delete cookies ?"))
-             {
+        {
 			document.cookie = "False"
-		}else{
-			alert("COOKIES ARE HERE ! Reload page or no 1000 from Zelenskyy");
 		}
 	}
 };
@@ -53,9 +50,9 @@ window.onload = () =>
                 minDigit = value;
             }
         }
+        alert(minDigit);
         console.log(minDigit);
-        document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = "True";
+		document.cookie = "True";
     }
 
 
