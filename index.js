@@ -24,11 +24,11 @@
     }
 // завдання 3.1
 let cookieValue = document.cookie.toString();
+const form = document.querySelector('.InputForm');
+const button = document.querySelector('.taskButton');
 if(cookieValue == "True")
 {
-    const form = document.querySelector('.InputForm');
     form.style.display = 'none';
-    const button = document.querySelector('.taskButton');
     button.style.display = 'none';
 }
 window.onload = () => 
