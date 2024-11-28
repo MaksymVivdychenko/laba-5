@@ -7,6 +7,11 @@
 {
     background-color: aqua;
 }
+.mainMottoHeader
+{
+    width: 50%;
+}
+
 .block7
 {
     background-color: aqua;
@@ -22,6 +27,10 @@
 a{
     color: black;
 }
+td
+{
+    border:  1px solid black;
+}
 .square
 {
     font-size: calc(1vh + 0.5vw);
@@ -29,20 +38,22 @@ a{
 }
 .InputForm
 {
-    display: grid;
-}
-.inputNumber
-{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5em;
     padding: 5%;
     width: 80%;
-    height: 70%;
-    align-self: flex-start;
+    row-gap: 20px;
+    height: auto;
+    justify-content: center;
     user-select: none;
-    justify-self: center;
 }
 .taskButton
 {
-    width: 8vw;
+    display: block;
+    font-size: 0.6em;
+    justify-self: center;
+    width: 50%;
     border-radius: 20px;
     cursor: pointer;
     transition: 1s;
@@ -53,8 +64,18 @@ button:hover
     
     background-color: white;
 }
-@media screen and (min-width: 769px)
+@media screen and (min-width: 900px)
 {
+    .InputForm
+    {
+        align-self: flex-start;
+    }
+.headerText
+{
+    text-align: end;
+    width: 70%;
+    font-size: 1em;
+}
 .container
 {
     column-gap: 5%;
@@ -79,21 +100,23 @@ body
     padding-right: 2%;
     min-height: 10vh;
     grid-area: 1/1/1/5;
-    display: grid;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: aqua;
 }
 .block7
 {
-    padding: 0%;
     background-color: aqua;
-    display: grid;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     grid-area: 9/1/9/5;
     min-height: 10vh;
     padding-left: 2%;
     padding-right: 2%;
-    grid-template-columns: repeat(3, 1fr);
 }
 .mainMotto
 {
@@ -130,6 +153,7 @@ body
 {
     grid-area: 3/4/9/4;
 }
+
 .block2, .block3, .block5, .block6
 {
     background-color:  rgb(246, 248, 92);
@@ -139,18 +163,34 @@ body
     display: grid;
     justify-items: center;
     grid-template-rows: auto 1fr;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
-.block5
+.block6Text
 {
-    display: grid;
-    justify-items: center;
-    grid-template-rows: auto auto auto;
-    font-size: 1.5em;
+    font-size: 0.8em;
 }
 .block5, .block6
 {
-    padding-left: 6%;
+    padding: 9%;
+}
+.block5Text
+{
+    align-items: center;
+}
+.history_facts, .health_facts
+{
+    text-align: center;
+}
+.inputNumber
+{
+    width: 100%;
+    height: auto;
+    font-size: 0.6em;
+}
+ol
+{
+    padding: 0%;
+    margin: 0%;
 }
 .block2
 {
@@ -170,9 +210,6 @@ nav > ul > li
 {
 margin: 14px;
 }
-ol{
-    margin: 30px;
-}
 nav{
     font-size: 1.5em;
     padding-bottom: 10%;
@@ -181,14 +218,14 @@ ol
 {
     width: 100%;
     height: 60%;
-    font-size: 0.6em;
+    font-size: 0.8em;
 }
 
 li{
     margin: 3%
 }
 }
-@media screen and (max-width: 768px)
+@media screen and (max-width: 899px)
 {
     .container
     {
@@ -226,13 +263,17 @@ li{
     {
         padding: 8%;
         grid-area: 3/1/3/1;
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
     }
     .block6
     {
         grid-area: 3/2/3/2;
         display: grid;
+        justify-items: center;
         padding: 8%;
     }
     .block3
@@ -243,8 +284,10 @@ li{
     }
     .block7
     {
+        overflow: hidden;
         grid-area: 6/1/6/3;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         padding-left: 2%;
