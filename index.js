@@ -96,6 +96,13 @@ block.addEventListener('mouseleave', () =>
             createTable();
         }
     })
+block.addEventListener('touchend', () => 
+    {
+        if(!document.querySelector('table'))
+        {
+            createTable();
+        }
+    })
 
 function createTable()
 {
