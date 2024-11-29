@@ -107,7 +107,7 @@ block.addEventListener('touchend', () =>
 function createTable()
 {
     const table = document.createElement('table');
-      const cellCount = prompt("Введіть кількістьклітинок у таблиці НАТУРАЛЬНИМ число з верхнею межею 40:", "4");
+      const cellCount = prompt("Введіть кількістьклітинок у таблиці НАТУРАЛЬНИМ числом з верхнею межею 40:", "4");
       const numCells = parseInt(cellCount);
       if (isNaN(numCells) || numCells <= 0  || numCells > 40) 
         {
