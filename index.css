@@ -48,6 +48,7 @@ td
     justify-content: center;
     user-select: none;
 }
+
 .taskButton
 {
     display: block;
@@ -58,6 +59,17 @@ td
     cursor: pointer;
     transition: 1s;
     background-color: aqua;
+}
+.task5Button
+{
+    display: block;
+    font-size: 1em;
+    justify-self: center;
+    width: 6%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s;
+    background-color: rgb(246, 248, 92); 
 }
 button:hover
 {
@@ -103,11 +115,9 @@ body
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aqua;
 }
 .block7
 {
-    background-color: aqua;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
@@ -163,7 +173,7 @@ body
     display: grid;
     justify-items: center;
     grid-template-rows: auto 1fr;
-    font-size: 1.4em;
+    font-size: 1.3em;
 }
 .block6Text
 {
@@ -282,10 +292,15 @@ li{
          margin-top: 1%;
          margin-bottom: 1%;
     }
+    .task5Button
+    {
+        width: 10%;
+    }
     .block7
     {
         overflow: hidden;
         grid-area: 6/1/6/3;
+        height: auto;
         display: flex;
         flex-wrap: wrap;
         align-items: center;

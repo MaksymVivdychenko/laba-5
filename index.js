@@ -1,33 +1,33 @@
-//функції:
-   
+
+
 // завдання 1
    function swapText() {
-        // Отримуємо елементи блоків 1 та 6
         const block1 = document.querySelector('.headerText');
         const block6 = document.querySelector('.block6Text');
-
-        // Зберігаємо тексти блоків
+        
         const block1Text = block1.textContent;
         const block6Text = block6.textContent;
 
-        // Змінюємо текст блоків місцями
         block1.textContent = block6Text;
-        block6.innerHTML = block1Text;
+        block6.textContent = block1Text;
     }
+
 // завдання 2
     function CircleSquare(a)
     {
-        const square = Math.PI*a**2
+        const area = Math.PI*a**2
         const block5 = document.querySelector('.block5');
         block5.innerHTML += `<br>
-        <span class = "square">${square.toFixed(3)}</span>`;
+        <span class = "square">${area.toFixed(3)}</span>`;
     }
-// завдання 3.1
+
+// завдання 3
 window.onload = () => 
     {
-        let cookieValue = document.cookie.toString();
+        localStorage.removeItem('tableData'); // це для 5 завдання
+        let cookieValue = document.cookie.toString().split('=');
         const form = document.querySelector('.InputForm');
-        if(cookieValue == "True")
+        if(cookieValue[1] == "True")
         {
             form.style.display = 'none';
             setTimeout(() => 
@@ -39,14 +39,14 @@ window.onload = () =>
                 }
                 else
                 {
-                    alert("Перевантажте сторінку, щоб отримати доступ до форми, інакше - миска рис і кішка-дівчина")
+                    alert("Перевантажте сторінку, щоб отримати доступ до форми, інакше партія забере миска рис і кішка-дівчина")
                 }
             }, 100);
         }
 };
     function FindSmallestNum()
     {
-        var minDigit = 9;
+        let minDigit = 9;
         const inputNum = document.querySelector('.inputNumber');
         const num = parseInt(inputNum.value);
         if(isNaN(num) == false)
@@ -54,37 +54,39 @@ window.onload = () =>
             const digits = num.toString().split('');
             for(const digit of digits)
             {
-                var value = Number(digit);
+                let value = Number(digit);
                 if(value < minDigit)
                 {
                     minDigit = value;
                 }
             }
             alert(minDigit);
-            document.cookie = "True";
+            document.cookie = "CookieEnabled=True";
         }
         else
         {
             alert("Field is empty!")
         }
     }
+
 // завдання 4
 function changeColor(){
-	const smallBlockLeftTop = document.querySelector('.block6Text');
+	const block6Text = document.querySelector('.block6Text');
 	const colorPicker = document.querySelector('.colorPicker');
 	const savedColor = localStorage.getItem('block6TextColor');
 
    	if (savedColor) {
-        smallBlockLeftTop.style.color = savedColor; 
+        block6Text.style.color = savedColor; 
     }
 
-    smallBlockLeftTop.addEventListener('mouseup', function() {
+    block6Text.addEventListener('mouseup', function() {
 	    const selectedColor = colorPicker.value;
-	    smallBlockLeftTop.style.color = selectedColor;  
+	    block6Text.style.color = selectedColor;  
 
 	    localStorage.setItem('block6TextColor', selectedColor);
 	});
 }
+
 // завдання 5
 const block =  document.querySelector('.block7')
 block.addEventListener('mouseleave', () => 
@@ -94,6 +96,7 @@ block.addEventListener('mouseleave', () =>
             createTable();
         }
     })
+
 function createTable()
 {
     const table = document.createElement('table');
@@ -105,6 +108,9 @@ function createTable()
       }
       const row1 = document.createElement('tr');
       const row2 = document.createElement('tr');
+      const button = document.createElement('button');
+      button.textContent = 'Save data';
+      button.classList.add('task5Button');
 
       if(numCells % 2 != 0)
       {
@@ -123,7 +129,7 @@ function createTable()
             cell.style.textAlign = 'center';
             cell.contentEditable = "true";
             cell.textContent = `Cell ${i + 1}`;
-            if (i % 2 == 0) {
+            if (i % 2 === 0) {
               row1.appendChild(cell);
             } else {
               row2.appendChild(cell);
@@ -135,9 +141,26 @@ function createTable()
       if (numCells > 1 && numCells % 2 === 0) {
         table.appendChild(row2);
       }
+      button.addEventListener('click', () =>
+    {
+        const rows = table.querySelectorAll('tr');
+        const tableData = [];
+        rows.forEach(row => 
+        {
+            const cells = row.querySelectorAll('td');
+            const rowData = [];
+            cells.forEach(cell => rowData.push(cell.textContent));
+            tableData.push(rowData);
+        }
+        )
+        localStorage.setItem('tableData', JSON.stringify(tableData));
+        alert('Дані збережено в localStorage');
+    })
 
       block.appendChild(table);
+      block.appendChild(button);
 }
+// виклик функцій
      CircleSquare(2);
      swapText();
      changeColor();
