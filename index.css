@@ -176,10 +176,6 @@ body
     grid-template-rows: auto 1fr;
     font-size: 1.3em;
 }
-.block6Text
-{
-    font-size: 0.8em;
-}
 .block5, .block6
 {
     padding: 9%;
@@ -299,7 +295,7 @@ li{
     }
     .block7
     {
-        overflow: hidden;
+        overflow-x:auto;
         grid-area: 6/1/6/3;
         height: auto;
         display: flex;
