@@ -307,6 +307,7 @@ li{
         justify-content: space-between;
         padding-left: 2%;
         padding-right: 2%;
+        min-height: 7vh;
     }
     h3
     {
