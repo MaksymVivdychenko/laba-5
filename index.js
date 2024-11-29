@@ -27,15 +27,15 @@ window.onload = () =>
         localStorage.removeItem('tableData'); // це для 5 завдання
         let cookieValue = document.cookie.toString().split('=');
         const form = document.querySelector('.InputForm');
-        if(cookieValue[1] == "True")
+        if(cookieValue[1] != "-1" && cookieValue[1] !== undefined)
         {
             form.style.display = 'none';
             setTimeout(() => 
             {
-                if (confirm("Delete cookies ?"))
+                if (confirm(`Last digit was ${cookieValue[1]}. Delete cookies ?`))
                 {
                     form.style.display = 'grid';
-                    document.cookie = "isDigitFound=False;";
+                    document.cookie = "isDigitFound=-1;";
                 }
                 else
                 {
@@ -61,7 +61,7 @@ window.onload = () =>
                 }
             }
             alert(minDigit);
-            document.cookie = "isDigitFound=True;";
+            document.cookie = `isDigitFound=${minDigit};`;
         }
         else
         {
