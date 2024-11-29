@@ -35,7 +35,7 @@ window.onload = () =>
                 if (confirm("Delete cookies ?"))
                 {
                     form.style.display = 'grid';
-                    document.cookie = "False";
+                    document.cookie = "CookieEnabled=False";
                 }
                 else
                 {
