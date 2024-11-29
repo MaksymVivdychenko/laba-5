@@ -35,7 +35,7 @@ window.onload = () =>
                 if (confirm("Delete cookies ?"))
                 {
                     form.style.display = 'grid';
-                    document.cookie = "CookieEnabled=False";
+                    document.cookie = "isDigitFound=False;";
                 }
                 else
                 {
@@ -61,7 +61,7 @@ window.onload = () =>
                 }
             }
             alert(minDigit);
-            document.cookie = "CookieEnabled=True";
+            document.cookie = "isDigitFound=True;";
         }
         else
         {
